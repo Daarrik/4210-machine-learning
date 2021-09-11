@@ -26,7 +26,7 @@ with open('contact_lens.csv', 'r') as csvfile:
 
 #transform the original training features to numbers and add to the 4D array X. For instance Young = 1, Prepresbyopic = 2, Presbyopic = 3, so X = [[1, 1, 1, 1], [2, 2, 2, 2], ...]]
 #--> add your Python code here
-# Age: Young = 1, Prepresbyopic = 2, Presbyopic = 3
+# Age: Young = 1, Presbyopic = 2, Prepresbyopic = 3
 # Spectacle Prescription: Myope = 1, Hypermetrope = 1
 # Astigmatism: Yes = 1, No = 2
 # Tear Production Rate: Normal = 1, Reduced = 2

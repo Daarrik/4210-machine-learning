@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Darrik Houck
-# FILENAME: title of the source file
-# SPECIFICATION: description of the program
+# FILENAME: decision_tree.py
+# SPECIFICATION: Create a decision tree from the contact_lens.csv file
 # FOR: CS 4200- Assignment #1
 # TIME SPENT: 10 min
 #-----------------------------------------------------------*/

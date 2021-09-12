@@ -1,9 +1,9 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Darrik Houck
 # FILENAME: decision_tree.py
-# SPECIFICATION: Create a decision tree from the contact_lens.csv file
+# SPECIFICATION: Create a decision tree from contact_lens.csv
 # FOR: CS 4200- Assignment #1
-# TIME SPENT: 10 min
+# TIME SPENT: 20 min
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard vectors and arrays
@@ -30,23 +30,53 @@ with open('contact_lens.csv', 'r') as csvfile:
 # Spectacle Prescription: Myope = 1, Hypermetrope = 1
 # Astigmatism: Yes = 1, No = 2
 # Tear Production Rate: Normal = 1, Reduced = 2
-X = [
-      [1, 1, 2, 2],
-      [2, 1, 2, 1],
-      [3, 1, 2, 2],
-      [3, 1, 2, 1],
-      [2, 1, 1, 1],
-      [1, 1, 1, 1],
-      [1, 2, 2, 2],
-      [3, 1, 1, 2],
-      [2, 2, 2, 2],
-      [1, 1, 1, 2]
-    ]
+# X should be:
+# X = [
+#       [1, 1, 2, 2],
+#       [2, 1, 2, 1],
+#       [3, 1, 2, 2],
+#       [3, 1, 2, 1],
+#       [2, 1, 1, 1],
+#       [1, 1, 1, 1],
+#       [1, 2, 2, 2],
+#       [3, 1, 1, 2],
+#       [2, 2, 2, 2],
+#       [1, 1, 1, 2]
+#     ]
+for row in db:
+    X_row = []
+    if row[0] == "Young":
+        X_row.append(1)
+    elif row[0] == "Presbyopic":
+        X_row.append(2)
+    elif row[0] == "Prepresbyopic":
+        X_row.append(3)
+
+    if row[1] == "Myope":
+        X_row.append(1)
+    elif row[1] == "Hypermetrope":
+        X_row.append(2)
+
+    if row[2] == "Yes":
+        X_row.append(1)
+    elif row[2] == "No":
+        X_row.append(2)
+
+    if row[3] == "Normal":
+        X_row.append(1)
+    elif row[3] == "Reduced":
+        X_row.append(2)
+
+    X.append(X_row)
 
 #transform the original training classes to numbers and add to the vector Y. For instance Yes = 1, No = 2, so Y = [1, 1, 2, 2, ...]
-#--> addd your Python code here
+#--> add your Python code here
 # Recommend Lenses: Yes = 1, No = 2
-Y = [2, 2, 2, 1, 1, 1, 2, 2, 2, 1]
+for row in db:
+  if row[-1] == "Yes":
+    Y.append(1)
+  else:
+    Y.append(0)
 
 #fitting the decision tree to the data
 clf = tree.DecisionTreeClassifier(criterion = 'entropy')

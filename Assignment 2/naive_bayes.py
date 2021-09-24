@@ -1,9 +1,9 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Darrik Houck
 # FILENAME: naive_bayes.py
-# SPECIFICATION: Prints 
+# SPECIFICATION: Prints test cases from weather_test.csv which are over 0.75 confidence based on the data in weater_training.csv
 # FOR: CS 4210- Assignment #2
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: About 2 hours
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard vectors and arrays
@@ -11,8 +11,6 @@
 #importing some Python libraries
 from sklearn.naive_bayes import GaussianNB
 import csv
-import os
-os.chdir("C:/Users/Darrik/Documents/Python/4210/Assignment 2")
 
 weather_training = []
 weather_test = []

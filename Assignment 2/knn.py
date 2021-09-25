@@ -57,7 +57,7 @@ for i, instance in enumerate(db):
     #class_predicted = clf.predict([[1, 2]])[0]
     #--> add your Python code here
     class_predicted = clf.predict([testSample])[0]
-    print(class_predicted)
+    # print(class_predicted)
 
     #compare the prediction with the true label of the test instance to start calculating the error rate.
     #--> add your Python code here

@@ -71,7 +71,7 @@ for index, row in rules.iterrows():
 
     prior = row['consequent support']
     print(f'Prior: {prior}')
-    print(f'Gain in Confidence: {100*(row["antecedent support"]-prior)/prior}')
+    print(f'Gain in Confidence: {100*(row["confidence"]-prior)/prior}')
     print()
 #Meat, Cheese -> Eggs
 #Support: 0.21587301587301588

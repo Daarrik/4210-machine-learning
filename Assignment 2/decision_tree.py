@@ -13,8 +13,6 @@
 #importing some Python libraries
 from sklearn import tree
 import csv
-import os
-os.chdir("C:/Users/Darrik/Documents/Python/4210/Assignment 2")
 
 dataSets = ['contact_lens_training_1.csv', 'contact_lens_training_2.csv', 'contact_lens_training_3.csv']
 
@@ -71,8 +69,6 @@ for ds in dataSets:
             #class_predicted = clf.predict([[3, 1, 2, 1]])[0]           -> [0] is used to get an integer as the predicted class label so that you can compare it with the true label
             #--> add your Python code here
             class_predicted = clf.predict([[age[data[0]], sp[data[1]], ast[data[2]], tpr[data[3]]]])[0]
-            print(class_predicted)
-            # print(class_predicted)
             #compare the prediction with the true label (located at data[4]) of the test instance to start calculating the accuracy.
             #--> add your Python code here
             if data[4] == "Yes" and class_predicted == 1:
@@ -87,7 +83,6 @@ for ds in dataSets:
         #--> add your Python code here
         min_acc = 1
         acc = (TP + TN) / (TP + TN + FP + FN)
-        # print(acc)
         if acc < min_acc:
             min_acc = acc
 

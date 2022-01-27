@@ -109,12 +109,9 @@ with open('optdigits.tes', 'r') as testingFile:
 
     #compare the Random Forest prediction for each test sample with the ground truth label to calculate its accuracy
     #--> add your Python code here
-
+    # Done in the for loop above
+    
     #printing Random Forest accuracy here
     print("Random Forest accuracy: " + str(accuracy))
 
     print("Finished Random Forest algorithm (much faster and higher accuracy!) ...")
-
-
-
-

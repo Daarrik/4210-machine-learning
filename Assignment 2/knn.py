@@ -43,13 +43,14 @@ for i, instance in enumerate(db):
     # for j, compare_class in enumerate(db):
     #     if i != j:
     #         Y.append(1 if compare_class[-1] == "+" else 2)
+    # Moved to a single for loop above
 
     #store the test sample of this iteration in the vector testSample
     #--> add your Python code here
     testSample = [int(instance[0]), int(instance[1])]
 
     #fitting the knn to the data
-    clf = KNeighborsClassifier(n_neighbors=3, p=2)
+    clf = KNeighborsClassifier(n_neighbors=1, p=2)
     clf = clf.fit(X, Y)
 
     #use your test sample in this iteration to make the class prediction. For instance:

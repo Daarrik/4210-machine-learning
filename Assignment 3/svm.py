@@ -1,10 +1,10 @@
 #-------------------------------------------------------------------------
 # AUTHOR: Darrik Houck
 # FILENAME: svm.py
-# SPECIFICATION: Builds multiple SVM classifiers and prints out
-# the most accurate
+# SPECIFICATION: Builds multiple SVM classifiers from all combinations
+# of potential parameters and prints out the most accurate one.
 # FOR: CS 4210- Assignment #3
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 1 hour
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard vectors and arrays

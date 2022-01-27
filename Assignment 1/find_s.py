@@ -3,7 +3,7 @@
 # FILENAME: find_s.py
 # SPECIFICATION: Program for the Find S algorithm
 # FOR: CS 4200- Assignment #1
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 30 min
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard vectors and arrays
@@ -28,6 +28,7 @@ hypothesis = ['0'] * num_attributes #representing the most specific possible hyp
 print(hypothesis)
 
 #find the first positive training data in db and assign it to the vector hypothesis
+# --> add your Python code here
 row_num = 0           # Avoids reading over the same data in the second for loop below by remembering the row number of first positive training data
 for row in db:
   if row[-1] == "Yes":
@@ -36,8 +37,8 @@ for row in db:
   else:
     row_num += 1
 
-print("first", hypothesis)
 #find the maximally specific hypothesis according to your training data in db and assign it to the vector hypothesis (special characters allowed: "0" and "?")
+# --> add your Python code here
 for row in db[row_num+1:]:
   if row[-1] == "Yes":
     for j, val in enumerate(row):

@@ -31,38 +31,40 @@ y_test = np.array(df.values)[:,-1]     #getting the last field to form the class
 highest_acc_per = 0
 highest_acc_mlp = 0
 for w in n: #iterates over n
-   for b in r: #iterates over r
-      for a in range(2): #iterates over the algorithms
-         #Create a Neural Network classifier
-         if a==0:
-            clf = Perceptron(eta0=w, shuffle=b, max_iter=1000) #eta0 = learning rate, random_state = shuffle the training data
-         else:
-            clf = MLPClassifier(activation='logistic', learning_rate_init=w, hidden_layer_sizes=(25,), shuffle=b, max_iter=1000) #learning_rate_init = learning rate, hidden_layer_sizes = number of neurons in the ith hidden layer, random_state = shuffle the training data
 
-         #Fit the Neural Network to the training data
-         clf.fit(X_training, y_training)
+    for b in r: #iterates over r
 
-         #make the classifier prediction for each test sample and start computing its accuracy
-         #hint: to iterate over two collections simultaneously with zip() Example:
-         #for (x_testSample, y_testSample) in zip(X_test, y_test):
-         #to make a prediction do: clf.predict([x_testSample])
-         #--> add your Python code here
-         num_correct = 0
-         for x_testSample, y_testSample in zip(X_test, y_test):
-            prediction = clf.predict([x_testSample])
-            if prediction == y_testSample:
-               num_correct += 1
-         accuracy = num_correct/len(X_test)
+        for a in range(2): #iterates over the algorithms
+            #Create a Neural Network classifier
+            if a==0:
+               clf = Perceptron(eta0=w, random_state=b, max_iter=1000) #eta0 = learning rate, random_state = shuffle the training data
+            else:
+               clf = MLPClassifier(activation='logistic', learning_rate_init=w, hidden_layer_sizes=(25,), random_state=b, max_iter=1000) #learning_rate_init = learning rate, hidden_layer_sizes = number of neurons in the ith hidden layer, random_state = shuffle the training data
 
-         #check if the calculated accuracy is higher than the previously one calculated for each classifier. If so, update the highest accuracy and print it together with the network hyperparameters
-         #Example: "Highest Perceptron accuracy so far: 0.88, Parameters: learning rate=0.01, random_state=True"
-         #Example: "Highest MLP accuracy so far: 0.90, Parameters: learning rate=0.02, random_state=False"
-         #--> add your Python code here
-         if a==0:
-            if accuracy > highest_acc_per:
-               highest_acc_per = accuracy
-               print(f'Highest Perceptron accuracy so far: {highest_acc_per:.3}, Parameters: learning rate={w}, shuffle={b}')
-         else:
-            if accuracy > highest_acc_mlp:
-               highest_acc_mlp = accuracy
-               print(f'Highest MLP accuracy so far: {highest_acc_mlp:.3}, Parameters: learning rate={w}, shuffle={b}')
+            #Fit the Neural Network to the training data
+            clf.fit(X_training, y_training)
+
+            #make the classifier prediction for each test sample and start computing its accuracy
+            #hint: to iterate over two collections simultaneously with zip() Example:
+            #for (x_testSample, y_testSample) in zip(X_test, y_test):
+            #to make a prediction do: clf.predict([x_testSample])
+            #--> add your Python code here
+            num_correct = 0
+            for x_testSample, y_testSample in zip(X_test, y_test):
+               prediction = clf.predict([x_testSample])
+               if prediction == y_testSample:
+                  num_correct += 1
+            accuracy = num_correct/len(X_test)
+
+            #check if the calculated accuracy is higher than the previously one calculated for each classifier. If so, update the highest accuracy and print it together with the network hyperparameters
+            #Example: "Highest Perceptron accuracy so far: 0.88, Parameters: learning rate=0.01, random_state=True"
+            #Example: "Highest MLP accuracy so far: 0.90, Parameters: learning rate=0.02, random_state=False"
+            #--> add your Python code here
+            if a==0:
+               if accuracy > highest_acc_per:
+                  highest_acc_per = accuracy
+                  print(f'Highest Perceptron accuracy so far: {highest_acc_per}, Parameters: learning rate={w}, random_state={b}')
+            else:
+               if accuracy > highest_acc_mlp:
+                  highest_acc_mlp = accuracy
+                  print(f'Highest MLP accuracy so far: {highest_acc_mlp}, Parameters: learning rate={w}, random_state={b}')

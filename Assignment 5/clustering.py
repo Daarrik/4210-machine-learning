@@ -10,7 +10,6 @@
 #-----------------------------------------------------------*/
 
 #importing some Python libraries
-from typing import KeysView
 from sklearn.cluster import KMeans
 from sklearn.cluster import AgglomerativeClustering
 import numpy as np

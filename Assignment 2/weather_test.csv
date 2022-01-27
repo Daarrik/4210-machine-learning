@@ -1,0 +1,11 @@
+Day,Outlook,Temperature,Humidity,Wind,PlayTennis
+D15,Sunny,Hot,Normal,Weak,?
+D16,Sunny,Hot,Normal,Strong,?
+D17,Sunny,Cool,High,Weak,?
+D18,Overcast,Hot,High,Strong,?
+D19,Overcast,Cool,High,Weak,?
+D20,Overcast,Cool,High,Strong,?
+D21,Rain,Mild,Normal,Strong,?
+D22,Rain,Hot,Normal,Strong,?
+D23,Rain,Hot,High,Weak,?
+D24,Rain,Mild,High,Strong,?
